@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
-"""Copy the poster image to /output/entry.png.
+"""Deterministic entry point for the news-image-20261118 bounty.
 
-The submission image is a pre-rendered 1024x1024 PNG that ships with this
-repository (entry.png).  This program is intentionally tiny and deterministic:
-it resolves its own directory, makes sure /output exists, and byte-copies the
-PNG there.  No network, no dependencies outside the standard library.
+The final poster ships as entry.png next to this file. Running the program
+byte-copies that PNG to /output/entry.png, creating /output when missing.
+Two runs always produce identical bytes; nothing here touches the network.
 """
 
-import os
+from pathlib import Path
 import shutil
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-SOURCE = os.path.join(HERE, "entry.png")
-DEST_DIR = "/output"
-DEST = os.path.join(DEST_DIR, "entry.png")
+ROOT = Path(__file__).resolve().parent
+POSTER = ROOT / "entry.png"
+TARGET_DIR = Path("/output")
+TARGET = TARGET_DIR / "entry.png"
 
 
-def main() -> None:
-    if not os.path.isfile(SOURCE):
-        raise SystemExit(f"entry.png not found next to main.py ({SOURCE})")
-    os.makedirs(DEST_DIR, exist_ok=True)
-    shutil.copyfile(SOURCE, DEST)
-    print(f"wrote {DEST} ({os.path.getsize(DEST)} bytes)")
+def main() -> int:
+    if not POSTER.is_file():
+        raise SystemExit(f"missing poster image: {POSTER}")
+    TARGET_DIR.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(POSTER, TARGET)
+    print(f"wrote {TARGET} ({TARGET.stat().st_size} bytes)")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

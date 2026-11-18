@@ -1,17 +1,19 @@
 # One World · One Day — 18 November 2026
 
-A single-image summary of Wednesday 18 November 2026, laid out as the front page
-of a broadsheet: masthead, a dateline set as the hero, three leads across the top,
-a dot-matrix world map with numbered bureau markers, then forty despatches in four
-regional columns — Americas, Europe, Middle East & Africa, Asia-Pacific — each with a
-serif headline, a red category tag and a one-line dek. Newsprint paper (`#f4efe4`),
-black ink (`#17130e`), one accent red (`#b31b1b`), Georgia headlines over Helvetica
-deks: FT/Economist graphics-desk register rather than a dashboard.
+One image that reads like the front page of a broadsheet for Wednesday
+18 November 2026: a masthead and hero dateline, three lead stories up top,
+a dot-matrix world map with ten numbered bureaux, and forty dispatches
+sorted into four regional columns — Americas, Europe, Middle East &
+Africa, Asia-Pacific. Every item is a serif headline with a red category
+tag and a single-line dek. The palette is newsprint (`#f4efe4`) with black
+ink (`#17130e`) and one accent red (`#b31b1b`); Georgia carries the
+headlines and Helvetica the deks, in the FT/Economist graphics-desk
+register rather than a dashboard.
 
-The poster itself (`entry.png`, 1024×1024) is committed to the repo so the
-program needs no browser, no fonts beyond the system set and no network.
+`entry.png` (1024×1024) is committed to the repository, so the program
+needs no browser, no webfonts and no network.
 
-## Stories on the page
+## What is on the page
 
 **Leads**
 - Iran strikes Kuwait and Bahrain as Gulf air defences fire
@@ -69,22 +71,23 @@ program needs no browser, no fonts beyond the system set and no network.
 - **Magnitude 6 quake strikes Papua New Guinea** — *Pacific.* A shallow 10km rupture; no tsunami warning issued.
 - **Dhoni retires again, this time from the IPL** — *Cricket.* Chennai's captain becomes its mentor for 2027.
 - **Bangladesh police clash with garment workers** — *Labour.* Pay protests halt production at 50 factories near Dhaka.
-## Run
+
+## Run it
 
 ```bash
 python3 main.py
 ```
 
-Copies `entry.png` to `/output/entry.png`. Deterministic: two runs produce
-byte-identical output. Standard library only.
+That copies `entry.png` to `/output/entry.png`. It is deterministic — two
+runs give byte-identical output — and uses only the standard library.
 
-## Files
+## Repository contents
 
-- `entry.png` — the rendered poster (1024×1024, RGB PNG)
-- `poster.html` — the source layout that produced it (open in a browser at 1024×1024)
+- `entry.png` — the rendered poster (1024×1024 RGB PNG)
+- `poster.html` — the source layout behind it (open at 1024×1024 in a browser)
 - `main.py` — the grader entry point
 
-## License
+## Licence
 
 MIT — see `LICENSE`.
 
